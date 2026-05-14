@@ -35,6 +35,7 @@
 
 - [learning/failures/three_api_wrong_properties.md](learning/failures/three_api_wrong_properties.md) — ⚠️ render.calls vs render.drawCalls, WebGPURenderTarget không tồn tại
 - [learning/reflection/phase_a_b_gallery.md](learning/reflection/phase_a_b_gallery.md) — Phase A+B+Gallery: composition wins, TSL built-in first, ESLint/API failures
+- [learning/experimental/](learning/experimental/) — sandbox pattern chưa proven, mỗi file có `expires:`, proven → promote, fail → purge
 
 ---
 
