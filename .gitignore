@@ -14,10 +14,13 @@ plans/
 mcp-needs-auth-cache.json
 settings.local.json
 
-# Projects — memory có git riêng, track độc lập
-projects/
+# Projects — chỉ track memory/, bỏ session data
+projects/**/*.jsonl
+projects/**/subagents/
+projects/**/tool-results/
 
 # Track ở repo này:
-# CLAUDE.md      ← global profile + universal principles
-# settings.json  ← non-sensitive config
-# .gitignore     ← file này
+# CLAUDE.md           ← global profile + universal principles
+# settings.json       ← non-sensitive config
+# .gitignore          ← file này
+# projects/*/memory/  ← cognition system (tất cả projects)
