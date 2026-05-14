@@ -18,6 +18,7 @@
 
 - [context/phase_state.md](context/phase_state.md) — Phase B ✅ → Phase C chưa bắt đầu | 10 modules unit-pass | VATShader/LODBillboard/CharacterPool next
 - [context/open_questions.md](context/open_questions.md) — character-modules/ vs components/, gallery location, upgrade triggers
+- [context/memory_governance.md](context/memory_governance.md) — system_evaluation.md là chuẩn đối chiếu khi chỉnh memory system
 
 ---
 
