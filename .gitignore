@@ -1,0 +1,23 @@
+# Claude Code internals — không track
+sessions/
+backups/
+file-history/
+shell-snapshots/
+session-env/
+telemetry/
+ide/
+plans/
+.last-cleanup
+
+# Sensitive
+.credentials.json
+mcp-needs-auth-cache.json
+settings.local.json
+
+# Projects — memory có git riêng, track độc lập
+projects/
+
+# Track ở repo này:
+# CLAUDE.md      ← global profile + universal principles
+# settings.json  ← non-sensitive config
+# .gitignore     ← file này

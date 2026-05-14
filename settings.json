@@ -1,0 +1,16 @@
+{
+  "effortLevel": "high",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"systemMessage\": \"📝 Nhắc nhở: Nếu session này có quyết định kiến trúc, module mới, hoặc bug quan trọng — hãy nói 'tổng kết session' để lưu vào memory trước khi đóng.\"}'",
+            "shell": "bash"
+          }
+        ]
+      }
+    ]
+  }
+}
