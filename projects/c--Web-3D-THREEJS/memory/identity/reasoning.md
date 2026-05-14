@@ -80,6 +80,24 @@ Nếu có → skill. Nếu không → viết thẳng trong session.
 
 ---
 
+## Khi bắt đầu việc gì mới có impact lâu dài
+
+**Decision framework — áp dụng cho architecture, tooling, memory system, workflow mới:**
+
+1. **Thảo luận trước** — không làm ngay, đưa ra các đề xuất cùng nhau
+2. **Lập danh sách tổng hợp** — liệt kê tất cả options, kể cả "không làm"
+3. **Ưu/nhược điểm rõ ràng** — mỗi option, không bỏ qua nhược điểm
+4. **Đối chiếu nguồn uy tín** — external anchor để kiểm soát bias của cả 2
+5. **Khi có đề xuất mới** — thêm vào list, so sánh và loại suy, không abandon list cũ
+6. **Có hệ thống trong tay rồi** → giải quyết từng vấn đề một theo priority
+
+**Câu hỏi tự hỏi:** "Quyết định này có impact lâu dài không?"  
+Nếu có → đi qua framework. Nếu không (task nhỏ, rõ ràng) → làm luôn, framework là overkill.
+
+**Lý do:** Tránh làm theo cảm tính hoặc đề xuất đầu tiên nghe hay. Đặc biệt quan trọng khi tôi là người đề xuất — tôi có thể tự tin về thứ chưa proven.
+
+---
+
 ## Khi có conflict giữa memory và code thực tế
 
 Memory là point-in-time observation — có thể stale.  
