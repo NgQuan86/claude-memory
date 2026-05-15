@@ -5,6 +5,7 @@ type: identity
 trust: high
 decay: none
 last_validated: 2026-05-15
+max_lines: 150
 merged_from: feedback_communication, feedback_comments, feedback_git_push, feedback_doc_sync, feedback_deferred_pattern, feedback_roadmap_update, feedback_api_verification, feedback_skill_template, feedback_ecosystem_update, feedback_module_patterns, user_profile
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
@@ -110,3 +111,15 @@ Thứ 2 đầu tuần hoặc user nói "check cộng đồng":
 1. Search: Three.js, Babylon.js, WebGPU, TSL, Gaussian Splatting, AI 3D tools
 2. Lọc chỉ những gì ảnh hưởng trực tiếp đến Web-3D ecosystem
 3. Ghi vào `c:\Web-3D\ECOSYSTEM.md` — thêm vào section phù hợp, kèm ngày + nguồn
+
+---
+
+## Session Maintenance Checklist
+
+Cuối mỗi session (hoặc sau milestone):
+
+- [ ] `context/phase_state.md` — update nếu có module mới unit-pass hoặc phase change
+- [ ] `learning/failures/` — log ngay trong session nếu có API error hoặc wrong assumption
+- [ ] `identity/` files — prune nếu bất kỳ file nào vượt `max_lines:` limit
+
+*Không cần làm hết mỗi session — chỉ khi có thay đổi thực sự.*

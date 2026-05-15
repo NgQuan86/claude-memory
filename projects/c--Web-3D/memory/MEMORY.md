@@ -58,6 +58,7 @@
 - `archive/project_*.md` — kế hoạch dài hạn (Babylon, dashboard, package upgrade)
 - `archive/reference_*.md` — tài nguyên ngoài (TSL repos, Bruno Simon, ecosystem map)
 - `archive/user_profile.md` — đã merge vào identity/collaboration.md
+- [archive/RETENTION.md](archive/RETENTION.md) — cleanup policy: review cuối mỗi Phase
 
 ---
 
@@ -71,7 +72,7 @@
 
 | Từ | Lên | Điều kiện |
 |----|-----|-----------|
-| Evolution Pipeline | Layer 3 Distilled | ≥3 lần dùng, không có failure |
+| Evolution Pipeline | Layer 3 Distilled | Pattern đã dùng thành công + likely reuse — không cần đếm lần |
 | Layer 3 Distilled | Layer 4 Canonical | Cross-project + ≥6 tháng ổn định + user ceremony |
 | Layer 1 Immutable Core | (thay đổi nội dung) | User confirm rõ ràng — không AI-initiated |
 | Layer 2 Working Memory | (expire) | Update sau mỗi milestone, xóa khi không còn relevant |

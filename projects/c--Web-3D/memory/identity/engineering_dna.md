@@ -5,6 +5,7 @@ type: identity
 trust: high
 decay: none
 last_validated: 2026-05-15
+max_lines: 100
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## 1. Verify Before Trust
