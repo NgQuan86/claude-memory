@@ -123,3 +123,12 @@ Cuối mỗi session (hoặc sau milestone):
 - [ ] `identity/` files — prune nếu bất kỳ file nào vượt `max_lines:` limit
 
 *Không cần làm hết mỗi session — chỉ khi có thay đổi thực sự.*
+
+### Trigger update — 2 hướng
+
+**AI tự propose** khi nhận ra milestone:
+- Module vừa unit-pass → "phase_state.md cần update không?"
+- API error xảy ra → log failures/ ngay, không đợi nhắc
+- Pattern dùng lần 2 → đề xuất promote lên distilled/
+
+**User nhắc** bất cứ lúc nào cảm thấy memory lạc hậu.
