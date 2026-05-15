@@ -94,6 +94,7 @@ Hệ thống có giá trị khi **tất cả** điều kiện sau đều đúng:
 | 3 | Archive retention policy — sessions > 6 tháng → delete | #4 Archive phình | Thấp | Trung bình | ⏳ Chưa làm |
 | 4 | Failure count tracking — thêm `occurrences:` vào failure files | Đo ROI #1 | Thấp | Trung bình | ⏳ Chưa làm |
 | 5 | Cross-project memory bridge — BABYLONJS kế thừa distilled từ THREEJS | Knowledge không mất khi đổi engine | Cao | Thấp — defer đến Phase C+D | ⏳ Deferred |
+| 6 | Benchmark system — đo prompts_needed, context_recovery_speed, bug_rate với/không có framework | Prove worth-it condition bằng data thực | Trung bình | Trung bình — sau Phase C | ⏳ Deferred |
 
 ---
 

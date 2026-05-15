@@ -28,7 +28,7 @@
 ---
 
 ## Layer 3 — DISTILLED KNOWLEDGE (proven patterns)
-*Grows — promoted từ Evolution Pipeline khi ≥3 lần dùng, không có failure*
+*Grows — promoted từ Evolution Pipeline khi pattern proven + likely reuse*
 
 - [knowledge/distilled/create_demo_pattern.md](knowledge/distilled/create_demo_pattern.md) — createDemo(canvas) interface chuẩn — proven 10 modules
 - [knowledge/distilled/gpu_module_structure.md](knowledge/distilled/gpu_module_structure.md) — Module scaffold: folder, meta.json, class, composition pattern
