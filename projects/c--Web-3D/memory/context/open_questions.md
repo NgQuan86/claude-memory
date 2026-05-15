@@ -2,7 +2,10 @@
 name: Open Questions — Unresolved Decisions
 description: Quyết định kiến trúc chưa giải quyết, cần revisit khi đến thời điểm
 type: context
-updated: 2026-05-14
+trust: medium
+decay: fast
+lifecycle: working-memory
+last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## Architecture Decisions

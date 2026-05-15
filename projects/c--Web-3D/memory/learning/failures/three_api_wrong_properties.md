@@ -1,6 +1,9 @@
 ---
 name: Three.js Wrong API Properties
 type: failure
+trust: high
+decay: none
+last_validated: 2026-05-15
 date: 2026-05-11
 severity: high
 resolved: true

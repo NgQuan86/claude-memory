@@ -16,10 +16,12 @@ created: 2026-05-15
 
 | | Trước | Sau (2026-05-15) |
 |---|---|---|
-| Cấu trúc | CLAUDE.md + settings.json | 5-layer cognitive architecture |
+| Cấu trúc | CLAUDE.md + settings.json | 4-layer cognitive architecture + Evolution Pipeline |
 | Cross-session | Mỗi session bắt đầu từ đầu | MEMORY.md load tự động |
 | Backup | Không | Git-backed → `NgQuan86/claude-memory` |
 | Vấn đề cốt lõi | Cùng lỗi API lặp lại, phải kể lại context mỗi lần | Failure log + context layer giải quyết |
+| Trust hierarchy | Không | `trust/decay/last_validated` trên mọi file + conflict resolution rules |
+| Validation | Không | `validate-memory.js` — check dead links tự động |
 
 ---
 
@@ -39,12 +41,12 @@ created: 2026-05-15
 
 | # | Tên | Vấn đề | Tại sao nguy hiểm | Mitigation hiện tại | Fix còn thiếu |
 |---|-----|--------|-------------------|--------------------|----|
-| 1 | **Stale data** | Memory là snapshot. Code thay đổi → memory nói dối | Không có memory → AI không chắc, grep verify. Có memory sai → AI tin tưởng, không verify, viết sai | `identity/reasoning.md`: "memory vs code conflict → code wins" | Không có fix hoàn toàn. Phụ thuộc AI follow rule |
+| 1 | **Stale data** | Memory là snapshot. Code thay đổi → memory nói dối | Không có memory → AI không chắc, grep verify. Có memory sai → AI tin tưởng, không verify, viết sai | `identity/reasoning.md`: "memory vs code conflict → code wins" + `trust: medium` + `decay: fast` + `last_validated` trên mọi context file | ✅ **Handled** — trust/decay rule đủ, không cần code thêm (2026-05-15) |
 | 2 | **Context window cost** | Identity files load mỗi session. Hiện tại ~260 lines, có thể 2-3x sau 1 năm | Token overhead = tiền thực. Context bị chiếm → ít room cho code | Archive không auto-load. MEMORY.md giới hạn 200 lines | `collaboration.md` 110 lines và tăng dần — chưa có prune policy |
 | 3 | **Manual discipline** | Promotion, context update, failure log đều không tự trigger | Kiến trúc đẹp nhưng không update = dead weight load mỗi session | — | Không có enforcement mechanism |
 | 4 | **Archive không có cleanup** | Chỉ nhận vào, không bao giờ xóa | Sau 2-3 năm chiếm phần lớn repo, noise khi search | Archive không auto-load | Cần retention policy: sessions >6 tháng → delete |
 | 5 | **Promotion pipeline ít dùng** | Criteria khó verify tự động. Patterns tốt thường vào CLAUDE.md trực tiếp | 2 distilled files sau 10 modules → <5 promotions/năm. Overhead > benefit | — | Cân nhắc bỏ hoặc simplify |
-| 6 | **Không có validation** | Không script kiểm tra MEMORY.md links còn sống, hay functions nhắc đến còn tồn tại không | File rename → links chết. AI đọc link chết → không error, chỉ missing context | — | Cần validation script (xem Cải tiến #1) |
+| 6 | **Không có validation** | Không script kiểm tra MEMORY.md links còn sống, hay functions nhắc đến còn tồn tại không | File rename → links chết. AI đọc link chết → không error, chỉ missing context | — | ✅ **FIXED** — `validate-memory.js` tại `~/.claude/`. Run: `node validate-memory.js`. First run tìm 1 dead link thật, 13 pass sau fix (2026-05-15) |
 
 ---
 
@@ -85,13 +87,13 @@ Hệ thống có giá trị khi **tất cả** điều kiện sau đều đúng:
 
 ## Cải tiến tiềm năng
 
-| # | Cải tiến | Giải quyết nhược điểm | Effort | Priority |
-|---|----------|----------------------|--------|----------|
-| 1 | Validation script — check MEMORY.md links còn sống | #6 Dead links | Thấp | Cao |
-| 2 | Context auto-expire — thêm `expires:` field vào frontmatter | #1 Stale data, #3 Manual discipline | Trung bình | Cao |
-| 3 | Archive retention policy — sessions > 6 tháng → delete | #4 Archive phình | Thấp | Trung bình |
-| 4 | Failure count tracking — thêm `occurrences:` vào failure files | Đo ROI #1 | Thấp | Trung bình |
-| 5 | Cross-project memory bridge — BABYLONJS kế thừa distilled từ THREEJS | Knowledge không mất khi đổi engine | Cao | Thấp — defer đến Phase C+D |
+| # | Cải tiến | Giải quyết nhược điểm | Effort | Priority | Trạng thái |
+|---|----------|----------------------|--------|----------|-----------|
+| 1 | Validation script — check MEMORY.md links còn sống | #6 Dead links | Thấp | Cao | ✅ DONE (2026-05-15) |
+| 2 | Context auto-expire — thêm `expires:` field vào frontmatter | #1 Stale data, #3 Manual discipline | Trung bình | Cao | ✅ Handled by trust/decay rules — không cần code thêm (2026-05-15) |
+| 3 | Archive retention policy — sessions > 6 tháng → delete | #4 Archive phình | Thấp | Trung bình | ⏳ Chưa làm |
+| 4 | Failure count tracking — thêm `occurrences:` vào failure files | Đo ROI #1 | Thấp | Trung bình | ⏳ Chưa làm |
+| 5 | Cross-project memory bridge — BABYLONJS kế thừa distilled từ THREEJS | Knowledge không mất khi đổi engine | Cao | Thấp — defer đến Phase C+D | ⏳ Deferred |
 
 ---
 
