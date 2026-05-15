@@ -111,6 +111,20 @@ Không dùng memory stale để justify quyết định kỹ thuật.
 
 ---
 
+## Ceremony rule — khi thay đổi Immutable Core hoặc Canonical
+
+Hai layers này không edit tùy tiện:
+
+| Layer | Điều kiện thay đổi |
+|-------|-------------------|
+| **Immutable Core** (`identity/`) | User confirm rõ ràng — không AI-initiated |
+| **Canonical Architecture** (`canonical/`) | User confirm + cross-project evidence |
+
+Quy trình: đề xuất → giải thích lý do → chờ user confirm → mới apply.  
+Nếu AI tự edit `identity/` không có user confirm → đó là behavior bug.
+
+---
+
 ## Trust hierarchy — khi đọc memory files
 
 | trust | decay | Cách apply |

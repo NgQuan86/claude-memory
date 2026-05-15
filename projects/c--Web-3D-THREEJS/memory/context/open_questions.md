@@ -4,6 +4,7 @@ description: Quyết định kiến trúc chưa giải quyết, cần revisit kh
 type: context
 trust: medium
 decay: fast
+lifecycle: working-memory
 last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---

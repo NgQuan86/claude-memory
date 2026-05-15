@@ -2,23 +2,24 @@
 > Đây là bản đồ nhận thức, không phải danh sách file.
 > Đọc theo thứ tự: Identity → Context → Knowledge → Learning → Archive (khi cần).
 >
-> **Conflict resolution:** Layer 1 > Layer 3 > Layer 2 > Layer 4. Layer thấp không override layer cao.
+> **Conflict resolution:** Layer 1 > Layer 4 > Layer 3 > Layer 2 > Evolution Pipeline. Layer thấp không override layer cao.
 > **Decay rule:** `trust: medium/low` + `last_validated` > 3 tháng → verify trước khi apply.
 > **Trust levels:** `high` = apply trực tiếp | `medium` = apply nhưng verify nếu nghi ngờ | `low/experimental` = luôn verify trước.
+> **Ceremony rule:** Thay đổi Layer 1 hoặc Layer 4 PHẢI có explicit user confirmation — không AI-initiated.
 
 ---
 
-## Layer 1 — IDENTITY (ai tôi là, cách tôi nghĩ)
-*Stable — ít thay đổi, luôn áp dụng*
+## Layer 1 — IMMUTABLE CORE (kernel — bản sắc engineering)
+*Cực kỳ stable — định nghĩa WHO tôi là. Thay đổi cần user confirm rõ ràng.*
 
-- [identity/engineering_dna.md](identity/engineering_dna.md) — 4 nguyên tắc bất biến: Verify, Simplicity, Honest-Uncertain, Failure>Silence
-- [identity/collaboration.md](identity/collaboration.md) — Hợp đồng làm việc với NgQuan: giao tiếp, comment style, git, doc sync, verification, skill format
-- [identity/reasoning.md](identity/reasoning.md) — Framework suy nghĩ: khi nào verify, abstract, defer, nói không chắc, ưu tiên build order
+- [identity/engineering_dna.md](identity/engineering_dna.md) — 4 nguyên tắc: Verify, Simplicity, Honest-Uncertain, Failure>Silence
+- [identity/collaboration.md](identity/collaboration.md) — Hợp đồng làm việc: giao tiếp, comment style, git, doc sync, skill format
+- [identity/reasoning.md](identity/reasoning.md) — Framework suy nghĩ: verify, abstract, defer, trust hierarchy, ceremony rule, decision framework
 
 ---
 
-## Layer 2 — CONTEXT (chúng ta đang ở đâu)
-*Volatile — cập nhật mỗi milestone*
+## Layer 2 — WORKING MEMORY (RAM — lifecycle ngắn)
+*Volatile — phase/session scoped. Phải update sau mỗi milestone. Stale = có hại hơn không có.*
 
 - [context/phase_state.md](context/phase_state.md) — Phase B ✅ → Phase C chưa bắt đầu | 10 modules unit-pass | VATShader/LODBillboard/CharacterPool next
 - [context/open_questions.md](context/open_questions.md) — character-modules/ vs components/, gallery location, upgrade triggers
@@ -26,20 +27,27 @@
 
 ---
 
-## Layer 3 — KNOWLEDGE (tôi biết gì — đã proven)
-*Grows — promoted từ learning khi pattern đã battle-tested*
+## Layer 3 — DISTILLED KNOWLEDGE (proven patterns)
+*Grows — promoted từ Evolution Pipeline khi ≥3 lần dùng, không có failure*
 
 - [knowledge/distilled/create_demo_pattern.md](knowledge/distilled/create_demo_pattern.md) — createDemo(canvas) interface chuẩn — proven 10 modules
 - [knowledge/distilled/gpu_module_structure.md](knowledge/distilled/gpu_module_structure.md) — Module scaffold: folder, meta.json, class, composition pattern
 
 ---
 
-## Layer 4 — LEARNING (tôi học được gì)
-*Grows — không xóa, chỉ thêm*
+## Layer 4 — CANONICAL ARCHITECTURE (trusted engineering truths)
+*Highest technical authority — WHAT tôi build. Cross-project + time-tested + user ceremony.*
+
+- [canonical/README.md](canonical/README.md) — criteria, candidates tiềm năng, ceremony process
+
+---
+
+## Evolution Pipeline (không phải storage layer — là input pipeline)
+*Raw experience → process → promote lên Layer 3/4, hoặc purge. Không bao giờ override layers trên.*
 
 - [learning/failures/three_api_wrong_properties.md](learning/failures/three_api_wrong_properties.md) — ⚠️ render.calls vs render.drawCalls, WebGPURenderTarget không tồn tại
 - [learning/reflection/phase_a_b_gallery.md](learning/reflection/phase_a_b_gallery.md) — Phase A+B+Gallery: composition wins, TSL built-in first, ESLint/API failures
-- [learning/experimental/](learning/experimental/) — sandbox pattern chưa proven, mỗi file có `expires:`, proven → promote, fail → purge
+- [learning/experimental/](learning/experimental/) — sandbox có `expires:`, proven → promote, fail → purge
 
 ---
 
@@ -63,6 +71,7 @@
 
 | Từ | Lên | Điều kiện |
 |----|-----|-----------|
-| learning/reflection | knowledge/distilled | Pattern dùng ≥3 lần, không có failure |
-| knowledge/distilled | identity/ | Áp dụng mọi project, không có exception |
-| context/ | (expire) | Cập nhật khi phase/milestone thay đổi |
+| Evolution Pipeline | Layer 3 Distilled | ≥3 lần dùng, không có failure |
+| Layer 3 Distilled | Layer 4 Canonical | Cross-project + ≥6 tháng ổn định + user ceremony |
+| Layer 1 Immutable Core | (thay đổi nội dung) | User confirm rõ ràng — không AI-initiated |
+| Layer 2 Working Memory | (expire) | Update sau mỗi milestone, xóa khi không còn relevant |
