@@ -63,7 +63,7 @@
 
 ## Meta
 
-- [~/.claude/system_evaluation.md](../../../../system_evaluation.md) — Ưu/nhược điểm chi tiết, điều kiện worth-it, điều kiện loại bỏ, cải tiến tiềm năng
+- [~/.claude/system_evaluation.md](../../../system_evaluation.md) — Ưu/nhược điểm chi tiết, điều kiện worth-it, điều kiện loại bỏ, cải tiến tiềm năng
 
 ---
 
