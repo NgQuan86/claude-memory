@@ -1,6 +1,10 @@
 # Cognitive Map — THREEJS Workspace
 > Đây là bản đồ nhận thức, không phải danh sách file.
 > Đọc theo thứ tự: Identity → Context → Knowledge → Learning → Archive (khi cần).
+>
+> **Conflict resolution:** Layer 1 > Layer 3 > Layer 2 > Layer 4. Layer thấp không override layer cao.
+> **Decay rule:** `trust: medium/low` + `last_validated` > 3 tháng → verify trước khi apply.
+> **Trust levels:** `high` = apply trực tiếp | `medium` = apply nhưng verify nếu nghi ngờ | `low/experimental` = luôn verify trước.
 
 ---
 

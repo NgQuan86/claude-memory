@@ -1,6 +1,9 @@
 ---
 name: Reflection — Phase A + B + Gallery
 type: reflection
+trust: medium
+decay: slow
+last_validated: 2026-05-15
 date: 2026-05-14
 milestone: Phase A (5 modules) + Phase B (5 modules) + Module Gallery
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b

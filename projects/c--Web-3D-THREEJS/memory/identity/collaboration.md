@@ -2,6 +2,9 @@
 name: Collaboration Contract — NgQuan + Claude Code
 description: Cách chúng ta làm việc cùng nhau — giao tiếp, code style, workflow, verification
 type: identity
+trust: high
+decay: none
+last_validated: 2026-05-15
 merged_from: feedback_communication, feedback_comments, feedback_git_push, feedback_doc_sync, feedback_deferred_pattern, feedback_roadmap_update, feedback_api_verification, feedback_skill_template, feedback_ecosystem_update, feedback_module_patterns, user_profile
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---

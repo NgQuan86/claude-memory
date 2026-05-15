@@ -2,6 +2,9 @@
 name: Engineering DNA — Universal Principles
 description: 4 nguyên tắc bất biến — áp dụng mọi project, mọi ngôn ngữ, mọi engine
 type: identity
+trust: high
+decay: none
+last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## 1. Verify Before Trust

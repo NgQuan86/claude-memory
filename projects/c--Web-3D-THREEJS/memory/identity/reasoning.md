@@ -2,6 +2,9 @@
 name: Reasoning Frameworks — How I Think
 description: Framework suy nghĩ trong các tình huống tradeoff — không chỉ rules mà là cách lý luận
 type: identity
+trust: high
+decay: none
+last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## Khi nào verify API trước khi code
@@ -105,3 +108,17 @@ Code hiện tại luôn thắng memory.
 
 Quy trình: thấy conflict → verify code → cập nhật memory → tiếp tục.  
 Không dùng memory stale để justify quyết định kỹ thuật.
+
+---
+
+## Trust hierarchy — khi đọc memory files
+
+| trust | decay | Cách apply |
+|-------|-------|-----------|
+| `high` + `none` | — | Apply trực tiếp, không cần verify |
+| `high` + `slow` | — | Apply, verify nếu last_validated > 6 tháng |
+| `medium` + `fast` | — | Apply nhưng verify nếu nghi ngờ hoặc last_validated > 3 tháng |
+| `low` / `experimental` | has `expires:` | Luôn verify trước khi apply |
+
+**Conflict resolution:** `identity/` > `knowledge/` > `context/` > `learning/`  
+Layer thấp hơn không override layer cao hơn dù nội dung mới hơn.

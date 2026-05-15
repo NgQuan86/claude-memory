@@ -2,7 +2,9 @@
 name: Memory Governance — Quy ước vận hành hệ thống
 description: Quy ước dùng system_evaluation.md làm chuẩn đối chiếu khi chỉnh sửa memory system
 type: context
-created: 2026-05-15
+trust: medium
+decay: fast
+last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## Quy ước

@@ -1,6 +1,9 @@
 ---
 name: GPU Module Structure — threejs-modules scaffold
 type: distilled
+trust: high
+decay: slow
+last_validated: 2026-05-15
 promoted_from: reflection/phase_a_b_gallery.md
 date: 2026-05-14
 proven_in: 10 modules (Phase A + B)

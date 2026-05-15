@@ -2,7 +2,9 @@
 name: Phase State — Current Position
 description: Trạng thái phase hiện tại, milestone tiếp theo, open blockers
 type: context
-updated: 2026-05-14
+trust: medium
+decay: fast
+last_validated: 2026-05-15
 originSessionId: a2a44180-fdf2-4f77-8e3f-9cae83adf89b
 ---
 ## Vị trí hiện tại
